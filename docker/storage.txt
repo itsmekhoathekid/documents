@@ -1,0 +1,42 @@
+file system
+when install docker on a system 
+    -> creates /var/lib/docker 
+    -> consist of aufs, containers
+
+layered architecture
+
+dockerfile : abcxyz
+
+each line of instruction in the dockerfile creates a new layer in the docker image.
+if content built from the past, docker reuse the previous layers from cache,...
+    -> saves time
+
+container layer : read , write
+image layer : read only
+
+copy on write : copy a file from image layer to container layer to modify.
+
+volumes : 
+
+docker volume create data_volume -> create folder data_volume inside volume folder 
+docker run -v data_volume:/var/lib/mysql mysql -> mount data_volume to mysql server
+-> volume mounting
+
+store database on external storage : docker run -v /data/mysql:/var/lib/mysql sql
+-> bind mounting 
+
+volume mount : mount a volume from the volumes directory and bind mount mounts a directory from any location on the Docker host.
+
+new way of mounting :
+docker run \
+--mount type=bind, source=/data/mysql, target=/var/lib/mysql mysql
+
+source : location on my host
+target : location on my container
+
+responsible for : operations, maintaining layer architecture, creating a writeable layer,
+ moving file across layers to enable, copy and write etc 
+ -> storage driver 
+ common storage driver : aufs, zfs, btrfs, device mapper, overlay, overlay2
+ 
+

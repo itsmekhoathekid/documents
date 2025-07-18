@@ -1,0 +1,20 @@
+install docker -> create 3 networks automatically : bridge, none, host
+how to assign networks:
+bridge : docker run ubuntu
+none : docker run Ubuntu --network=none
+host : docker run Ubuntu --network=host
+
+user-defined networks: create ur own internal network
+docker network create \
+    --driver bridge \
+    --subnet 182.18.0.0/16
+    custom-isolated-network
+
+to list all networks : docker network list
+
+Inspect network:
+docker inspect <id or name of the container> 
+
+how are the containers isolated within the host 
+docker uses network namespaces that creates for each container
+it then uses virual ethernet pair to connect containers together.
