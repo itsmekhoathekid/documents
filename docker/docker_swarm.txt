@@ -1,0 +1,24 @@
+
+docker Swarm
+    combine mutiple docker machines together into a single cluster
+    -> take care of distributing ur services / application instances in to seperate hosts
+        -> high availability, load balanceing across different systems and hardware.
+
+Setup Swarm - aka swarm cluster
+    must first have :
+        host for mutiple hosts with docker installed on them.
+        designate one host to be the manager / master / swarm manager, others as slaves or workers.
+        run "docker swarm init" on the swarm manager
+        on worker nodes : run "docker swarm join --token <token>
+
+DOCKER SERVICE 
+    : are one or more instances of a single application or service that runs across the nodes in the swarm clusters.
+
+
+docker run my-web-server
+
+create a docker serivce to run mutiple instances of my web server application across worker nodes in swarm cluste
+    -> on the manager node, run : "docker service create --replicas=3 my-web-server"
+    ex : docker service create --replicas=3 -p 8080:80 my-web-server
+    ex : docker service create --replicas=3 --network frontend my-web-server
+

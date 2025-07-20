@@ -1,0 +1,53 @@
+Image 
+
+docker run nginx
+image : docker.io/inginx/inginx (registry / user-account name / reposistory)
+
+-> the registry is all where all images are stored.
+
+Private Registry
+
+cloud services provider like AWS, Azure, GCP provide a private registry by default
+
+To run a container using an image from a private registry : 
+    - docker login private-registry.io
+    - docker run private-registry.io/apps/internal-app
+
+DEPLOY PRIVATE Registry
+The docker registry, itself another application, is a available as a docker image.
+
+docker run  -d -p 5000:5000 --name registry registry:2
+
+how to push image to registry:
+
+    docker image tag tag my-image localhost:5000/my-image
+    -> tag the image with the private registry URL.
+
+    docker push localhost:5000/my-image
+
+how to pull image:
+    docker pull localhost:5000/my-image
+    docker pull 192.168.56.100:5000/my-image (ip or domain name of my docker host)
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

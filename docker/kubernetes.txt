@@ -1,0 +1,59 @@
+Basic kubernetes concepts:
+    kubectl run --replicas=1000 my-web-server
+    kubectl scale --replicas=2000 my-web-server
+
+    can upgrade 2k instances of the app in a rolling-update 
+    kubectl rolling-update my-web-server --image=web-server:2 
+    kubectl rolling-update my-web-server --rollback
+
+    -> can help u test new feats of ur app (by only uploading a percentage of these instances through A/B testing methods)
+
+    -> support many different networks and storage vendors.
+    -> supprot authentication, authorization mechanism
+
+    use Docker host to host applications in the form of Docker containers.
+
+Architecture
+    Kubernetes cluster consists of a set of nodes
+    A node 
+        is a machine physical or virtual on which a kubernetes software set of tools are installed.
+        is a worker machine 
+            where containers will be launched by kubernetes
+    Cluster:
+        set of nodes grouped together.
+            -> if one node fails -> app still accessible
+        Master:
+            is a node with kubernetes control plane components installed.
+            -> watch over nodes in cluster
+                -> responsible for the orchestration of containers on the worker node.
+
+When install kubernetes on a system:
+    -> installing the following components :
+        -> API server : act as the front end for kubernetes.
+            -> user mangement devices , cli all take to the api server
+            -> interact with kubernets cluster
+        -> etcd service : distributed reliable key value store  
+            -> store all data used to manage the cluster
+        -> kubelet service : is the agent that run on each node in the cluster.
+            -> making sure the container are runing on the node as expected
+
+        -> container runtime : use to run containers (happens to be docker)
+
+        -> controller : the brain behind orchestration
+            -> noticing and responding when nodes containers or endpoints goes down.
+            -> make decisions to bring up new containers.
+        -> scheduler : responsible of distributing work or containers across mutiple nodes 
+            -> looks for newly created containers -> assign them to nodes
+        
+kubectl 
+    is the kubernetes CLA
+        -> used to deploy and manage applications on a kubernetes cluster -> get kubernets cluster related information 
+            -> get the status of the nodes in the cluster
+    use to deploy application on the cluster
+
+    kubectl run hello-minikube
+    kubectl cluster-info
+
+    kubectl get nodes : list all nodes part of the cluster.
+
+    kubectl run my-web-app --image=my-web-app --replicas=200

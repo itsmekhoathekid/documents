@@ -1,0 +1,21 @@
+CONTAINER ORCHESTRATION
+-> consist of a set of tools and scripts that can help host containers
+
+container orchestration solution : 
+    consists of mutiple docker hosts that can host containers.
+    -> if one fails -> still accessible through the others.
+    example : docker serivce create --replicas=100 nodejs
+    : can help you automatically scale up/down the number of instances base on needs.
+    : can help you automatically adding additional host to support the user load
+    : also support for advance networking between containers across different hosts
+    : load balancing user request across different host
+    : support for sharing storage between the host 
+    : configuration management and security within the cluster
+
+Solutons:
+    Docker Swarm
+    kubernetes : from google, most popular, supported by : aws, azure, gcp.
+    mesos 
+
+    
+

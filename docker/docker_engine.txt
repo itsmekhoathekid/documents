@@ -1,0 +1,40 @@
+
+When install Docker on linux host
+    -> actually installing 3 components : Docker deamon, rest api, Docker CLI
+    
+    Docker deamon : background process manages Docker objects : images, containers, volumes, networks.
+
+    REST API server : API interface that programs can use to talk to the deamon and provide instruction 
+        -> could create your own tool using this.
+    
+    Docker CLI : command line interface use to perform actions. 
+
+if docker engine : rest api, docker deamon
+laptop : docker cli -> command : docker -H=remote-docker-engine:2375
+    ->to run nginx : docker -H=10.123.2.1:2375 run nginx
+
+CONTAINERIZATION
+
+Namespace - PID 
+
+process create in container = process running in docker host
+pid in a container are specified by process id created by namespace
+
+cgroups - control groups
+
+Underlying host and containers share the same system resources such as cpu, mem.
+    -> how much resources dedicated to the host, containers ?
+    -> how does docker manage and share the resources between the containers?
+
+    by default, there is no restriction to how much resource the containers can use.
+    -> but we can restrict it
+
+    -> use cgroups to restrict the amount of hardware resources allocated to each container.
+
+    command : docker run --cpus=.5 ubuntu 
+        -> not take up more than 50% of the host CPU.
+        docker run --memory=100m ubuntu 
+        -> limit mem can use to 100mb.
+         
+
+
