@@ -1,0 +1,77 @@
+pwd
+
+cd ..
+cd ../..
+
+view a content in a file
+    cat file1.txt
+    cat file1.txt file2.txt
+
+
+head and tail
+    head -n 10 file1.txt
+    tail -n 10 file1.txt
+
+less
+    less 2023.csv
+    less -N 2023.csv / -N flag to show line numbers.
+
+touch : updates the access & modification timestamps of a file. or create a file if not exists
+mkdir <a folder>
+
+move command
+    The move command moves a file or directory from one location to another. 
+    You can use it to rename a file or to move it to a different directory altogether. 
+    Your working directory can't be the directory you're moving.
+
+    renaming:
+        mv some_file.txt some_other_name.txt
+    move a file:
+        mv some_file.txt some_directory/some_file.txt
+        mv some_file.txt ../some_file.txt
+    
+    mv some_file.txt some_directory/
+
+remove
+    delete a files or a empty direc 
+        rm some_file.txt
+    
+    delete a direct:
+        rm -r some_directory
+    
+copy
+    copy a file to a location
+        cp source_file.txt destination/
+    copy a direct
+        cp -R my_dir new_dir
+
+cd ~ : home
+
+grep
+    basic usage
+        grep "hello" words.txt
+    
+    mutiple files
+        grep "Hello" hello.txt hello2.txt
+    
+    recursive search
+        grep -r "hello" . (. special alias for current direct)
+
+
+find:
+    find a file by name
+        find some_directory -name hello.txt
+
+    pattern searching
+        find some_directory -name "*.txt" (* is a wild card that match anything)
+
+        find all filenames that contain the word "chad"
+            find some_directory -name "*chad*"
+
+    
+
+alias:
+    ~ : home
+    . : current dicect
+    .. : parent direct
+
