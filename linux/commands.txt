@@ -68,10 +68,105 @@ find:
         find all filenames that contain the word "chad"
             find some_directory -name "*chad*"
 
+changing permission:
+    ls -l : print out the permissions of each file and directory in long format.
+
+    Change the permissions of the private directory and all of its contents so that:
+        The owner can read, write, and execute
+        The group can do nothing
+        Others can do nothing
+        
+        command : chmod -R u=rwx,g=,o= DIRECTORY : 
+
+    executables
+        run a file shell: 
+            mydir/program.sh
+        if in current directory : 
+            ./program.sh
+
+    simply remove the executable permission:
+        chmod -x genids.sh
     
+    re-add the executable program permission for the owner:
+        chmod u+x <file_name>
+    
+    rm -rf / : remove forcfully and recursively
+
+    chown:
+        change the owner of a directory
+            sudo chown -R root <directory>
+
+
+shell configuration : nano ~/.bashrc
+
+current : https://www.boot.dev/lessons/81bcdb75-5ff0-41bf-9541-ee185d1c7498
+yt : https://www.youtube.com/watch?v=v392lEyM29A&t=4416s 1:26:46
 
 alias:
     ~ : home
     . : current dicect
     .. : parent direct
+
+    ls -a ~
+
+enviroment variable:
+    export NAME="Lane"
+    echo $NAME
+    # Lane
+
+    #!/bin/sh
+    echo "Hi I'm $NAME"
+
+    chmod +x ./introduce.sh
+
+    ./introduce.sh
+    # Hi I'm Lane
+
+PATH
+    echo $PATH
+    change path temporary:
+        export PATH="$PATH:/path/to/new"
+    cd ~
+    nano .bashrc
+    source ~/.bashrc
+
+    pwd : to see your whole path
+
+
+input/output:
+    man man : reading the manual's manual
+    ls -al 
+    curl --help
+
+    ./warn.sh (if u r in the current folder consist warn.sh)
+
+    echo $? : check exit code
+        if 0 : successed
+        else : failed
+    
+    standard error:
+        > : for redirecting stdout
+        2> : stderr
+
+        example : 
+            echo "Hello world" > hello.txt
+            cat hello.txt
+            # Hello world
+        
+    standrad in:
+        read KHOA
+    
+    Pipe:
+        echo "Have you heard the tragedy of Darth Plagueis the Wise?" | wc -w
+        grep -R "Bob" ../transactions/ --exclude-dir="backups" | wc -l
+
+    interrupt:
+        ctrl C 
+        kill PID
+
+        show all process: ps aux
+
+        ps aux | grep malicious.sh 
+
+        
 

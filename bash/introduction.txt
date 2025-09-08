@@ -1,0 +1,46 @@
+# https://tldp.org/LDP/Bash-Beginners-Guide/html/
+
+echo hello
+vim textfile.txt
+    !q : ko save
+    :wq : write + savee
+
+pwd : working directory
+
+output redirection:
+    > symbol to write to a file
+    >> to append to a file
+
+    < 
+    << : chèn dữ liệu trực tiếp trong script như thể nó đến từ file hoặc stdin.
+        command <<DELIMITER
+        nội_dung
+        nhiều_dòng
+        DELIMITER
+    
+    (.venv) anhkhoa@LAPTOP-KNKFTITB:~/documents/bash/practice$ [ hello = hello ]
+    (.venv) anhkhoa@LAPTOP-KNKFTITB:~/documents/bash/practice$ echo $? : return the exit code of the last execute command
+    0
+
+    -eq : Là toán tử so sánh số nguyên bằng nhau (equal).
+    {1,,} : 
+        ${1} : Lấy tham số thứ nhất truyền vào script.
+        ,, → Chuyển toàn bộ chuỗi thành chữ thường.
+
+    echo ${MY_FIRST_LIST[@]} : print everything in the list 
+    for item in  ${MY_FIRST_LIST[@]}; do echo -n $item | wc -c; done 
+        -n : ignore newline character
+
+awk:
+    use to filter file content or the output of a commandx 
+    awk '{print $1}' testfile.txt
+    echo "Just get this word: Hello" | awk '{print $5}'
+
+sed :
+    sed 's/fly/grasshopper/g' sedtest.txt
+    s : substitute
+    g : stand for globally - doing this across the entire text file
+    sed -i.ORIGINAL 's/fly/grasshopper/g' sedtest.txt 
+        create a backup file which contain original content
+
+you can run bash in parallel

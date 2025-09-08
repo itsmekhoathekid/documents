@@ -1,0 +1,17 @@
+{
+    "human_nature" : {
+        "apprehensive" : "worried that something bad will happen",
+        "assertive" : "expressing opinions or desires strongly and with confidence, so that people take notice",
+        "charming" : "pleasant and attractive",
+        "compassionate" : "feeling or showing sympathy and concern for others",
+        "cheerful" : "happy and positive",
+        "clumsy" : "moving in a way that is not controlled or careful, and often causing damage or injury",
+        "cynical" : "believing that people are only interested in themselves and are not sincere",
+        "egotistical" : "thinking that you are better or more important than other people",
+        "gullible" : "easily deceived or tricked, and too willing to believe everything that other people say",
+        "self-conscious" : "nervous or uncomfortable because you are worried about what people think about you or your actions",
+        "sensible" : "able to make good judgments based on reason and experience rather than emotion",
+        "tactful" : "careful not to say or do anything that could upset someone",
+        "well-liked" : "liked by many people"
+    }
+}

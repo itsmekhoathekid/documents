@@ -1,0 +1,10 @@
+present simple:
+    use cases:
+        - to talk about regular habits or repeated actions
+        - to talk about permanent situations
+        - to talk about facts or generally accepted truths
+        - to give instructions and directions
+        - to tell stories and talk about films, books and plays
+
+present continuous:
+    
